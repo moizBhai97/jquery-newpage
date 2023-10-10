@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Job Listings by Moiz Akhtar</title>
+
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+
+</head>
+<body>
+  
+  <div class="nav"></div>
+
+  <div class="container">
+
+    <div class= "box" id="filter" hidden>
+      <div class="tags" id="tags">
+        <div class="box_content__tags" id = "box_content__tags">
+        </div>
+      </div>
+
+      <div class="clear" id="clear">
+        <span>Clear</span>
+      </div>
+
+    </div>
+
+    <div class="container"></div>
+
+  </div>
+
+  <div class="form-container" hidden>
+    <form class="form">
+      <label for="company">Company:</label>
+      <input type="text" id="company" pattern=".*\S.*" title="Do not enter only white space" required>
+
+      <label for="position">Position:</label>
+      <input type="text" id="position" pattern=".*\S.*" title="Do not enter only white space" required>
+
+      <label for="logo">Logo:</label>
+      <input type="file" id="logo" name="logo" class="logo" accept="image/png, image/jpg, image/svg" required>
+
+      <label for="contract">Contract:</label>
+      <select id="contract" required>
+        <option value="">Select a contract</option>
+        <option value="Full Time">Full Time</option>
+        <option value="Contract">Contract</option>
+        <option value="Part Time">Part Time</option>
+      </select>
+
+      <label for="role">Role:</label>
+      <select id="role" required>
+        <option value="">Select a role</option>
+        <option value="Frontend">Frontend</option>
+        <option value="Backend">Backend</option>
+        <option value="Full Stack">Full Stack</option>
+      </select>
+
+      <label for="level">Level:</label>
+      <select id="level" required>
+        <option value="">Select a level</option>
+        <option value="Junior">Junior</option>
+        <option value="Midweight">Midweight</option>
+        <option value="Senior">Senior</option>
+      </select>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" pattern=".*\S.*" title="Do not enter only white space" required>
+
+      <label for="languages">Languages:</label>
+      <input type="text" id="languages-input" list="languages-list">
+      <datalist id="languages-list" required>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="C#">C#</option>
+        <option value="C++">C++</option>
+        <option value="PHP">PHP</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Swift">Swift</option>
+      </datalist>
+
+      <div class="error" id ="error1" hidden>Item already selected!</div>
+
+      <div id="selected-languages" hidden>
+        <div class="tags" id="tags">
+          <div class="box_content__tags" id = "box_content__tags">
+          </div>
+        </div>
+      </div>
+
+      <label for="tools">Tools:</label>
+      <input type="text" id="tools-input" list="tools-list">
+      <datalist class="datalist" id="tools-list" required>
+        <option value="Git">Git</option>
+        <option value="GitHub">GitHub</option>
+        <option value="Visual Studio Code">Visual Studio Code</option>
+        <option value="Sublime Text">Sublime Text</option>
+        <option value="Atom">Atom</option>
+        <option value="Eclipse">Eclipse</option>
+        <option value="IntelliJ IDEA">IntelliJ IDEA</option>
+        <option value="Android Studio">Android Studio</option>
+        <option value="Xcode">Xcode</option>
+        <option value="Adobe Photoshop">Adobe Photoshop</option>
+      </datalist>
+
+      <div class="error" id="error2" hidden>Item already selected!</div>
+
+      <div id="selected-tools" hidden>
+        <div class="tags" id="tags">
+          <div class="box_content__tags" id = "box_content__tags">
+          </div>
+        </div>
+      </div>
+
+      <label for="featured">Featured:</label>
+      <input type="checkbox" id="featured" name="featured">
+
+      <button type="submit" class="submit">Submit</button>
+    </form>
+
+  </div>
+
+  <div class="job-container" hidden>
+    <div class="job-description">
+      <div class="job-description__header">
+        <div class="job-description__logo">
+          <img src="./images/manage.svg" alt="Manage logo">
+        </div>
+        <div class="job-description__info">
+          <div class="header">
+            <h2>Fullstack Developer</h2>
+            <span class="box_content__new">New!</span>
+            <span class="box_content__featured">Featured</span>
+          </div>
+          <p>At Manage</p>
+          <div class="job-description__tags">
+            <span>Midweight</span>
+            <span>FullStack</span>
+          </div>
+        </div>
+      </div>
+      <div class="job-description__body">
+        <div class="job-description__details">
+          <div class="job-description__detail" id="1">
+            <span>Location:</span>
+            <p>Remote</p>
+          </div>
+          <div class="job-description__detail" id="2">
+            <span>Posted:</span>
+            <p class="2">1d ago</p>
+          </div>
+          <div class="job-description__detail" id="3">
+            <span>Contract:</span>
+            <p class="3">Part Time</p>
+          </div>
+        </div>
+        <div class="job-description__description">
+          <h3>Description</h3>
+          <p>We are in need of a fullstack developer at Manage, we are welcoming only Midweight level employees.</p>
+        </div>
+        <div class="job-description__requirements">
+          <h3>Requirements</h3>
+          <ul>
+            <li>3+ years of experience in frontend development</li>
+            <li>Strong proficiency in React and Python</li>
+            <li>Experience with Git and Agile development methodologies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img src="./images/add-circle.svg" alt="add" class="add">
+
+</body>
+</html>
