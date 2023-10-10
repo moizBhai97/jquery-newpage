@@ -1,3 +1,3 @@
 # jquery-newpage
 
-view page on this url 
+view page on url 
