@@ -388,6 +388,8 @@ function submitPressed() {
 
           $(".form-container").prop("hidden", true);
 
+          $("body").removeClass("noscroll");
+
           isFormHidden = true;
 
           form[0].reset();
